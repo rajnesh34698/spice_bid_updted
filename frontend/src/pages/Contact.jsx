@@ -26,10 +26,10 @@ const Contact = () => {
 
     emailjs
       .send(
-        "service_v01mtcu",
-        "template_3a1r5xp",
+        "service_1lona9k",
+        "template_awdk7pz",
         templateParams,
-        "YcOimjllS64zn4ghK"
+        "i2sXgF2ELxmqb8x_a"
       )
       .then(() => {
         toast.success("Thank You! Your message has been sent successfully.");
@@ -37,7 +37,8 @@ const Contact = () => {
         navigateTo("/");
       })
       .catch((err) => {
-        toast.error("Failed to send message.");
+        console.error("EmailJS Error details:", err);
+        toast.error(err?.text || "Failed to send message. Check console for details.");
         setLoading(false);
       });
   };
